@@ -2,7 +2,7 @@ library constants;
 
 import 'package:flutter/material.dart';
 
-const String applicationName = 'Cannbis';
+const String applicationName = 'Cannabis';
 const int primaryColor = 0xFF03c04a;
 const int shamRock = 0xFF03AC13;
 const int seaFoam = 0xFF3FE897;

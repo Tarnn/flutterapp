@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutterapp/utils/app_constants.dart' as Constants;
 
 class LoginPage extends StatefulWidget {
@@ -14,54 +15,60 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
-      children: <Widget>[
-        Container(
-            height: double.infinity,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-                Color(Constants.primaryColor),
-                Color(Constants.shamRock)
-              ], stops: [
-                0.1,
-                0.7
-              ]),
-            )),
-        Container(
-            height: double.infinity,
-            child: SingleChildScrollView(
-                physics: AlwaysScrollableScrollPhysics(),
-                padding: EdgeInsets.symmetric(
-                  horizontal: 40.0,
-                  vertical: 120.0,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text('Sign In',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Robotto',
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.bold)),
-                    SizedBox(height: 30.0),
-                    _buildEmailTF(),
-                    SizedBox(height: 30.0),
-                    _buildPasswordTF(),
-                    _buildForgotPasswordBtn(),
-                    _buildRememberMeCB(),
-                    _buildLoginBtn(),
-                    _buildSignInWithText(),
-                    _buildSocialBtnsRow(),
-                    _buildSignUp()
-                  ],
-                )
-                )
-                ),
-      ],
-    )
-    );
+        body: AnnotatedRegion<SystemUiOverlayStyle>(
+          value: SystemUiOverlayStyle.light,
+          child: GestureDetector(
+            onTap: () => FocusScope.of(context).unfocus(),
+            child: Stack(
+            children: <Widget>[
+                  Container(
+                      height: double.infinity,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(begin: Alignment.topCenter, colors: [
+                          Color(Constants.primaryColor),
+                          Color(Constants.shamRock)
+                        ], stops: [
+                          0.1,
+                          0.7
+                        ]),
+                      )),
+                  Container(
+                      height: double.infinity,
+                      child: SingleChildScrollView(
+                          physics: AlwaysScrollableScrollPhysics(),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 40.0,
+                            vertical: 80.0,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text('Sign In',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'Robotto',
+                                      fontSize: 30.0,
+                                      fontWeight: FontWeight.bold)),
+                              SizedBox(height: 30.0),
+                              _buildEmailTF(),
+                              SizedBox(height: 30.0),
+                              _buildPasswordTF(),
+                              _buildForgotPasswordBtn(),
+                              _buildRememberMeCB(),
+                              _buildLoginBtn(),
+                              _buildSignInWithText(),
+                              _buildSocialBtnsRow(),
+                              _buildSignUp()
+                            ],
+                          )
+                        )
+                      ),
+            ],
+           ),
+          ),
+        )
+     );
   }
 
   GestureDetector _buildSignUp() {
