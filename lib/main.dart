@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       onGenerateRoute: generateRoutes,
+      debugShowCheckedModeBanner: false,
     );
   }
 
