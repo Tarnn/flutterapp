@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                     Text('Sign In',
                         style: TextStyle(
                             color: Colors.white,
-                            fontFamily: 'OpenSans',
+                            fontFamily: 'Robotto',
                             fontSize: 30.0,
                             fontWeight: FontWeight.bold)),
                     SizedBox(height: 30.0),
@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                       text: 'Don\'t have an account? ',
                       style: TextStyle(
                         color: Colors.white,
-                        fontFamily: 'OpenSans',
+                        fontFamily: 'Robotto',
                         fontSize: 12.0,
                         fontWeight: FontWeight.w400
                       )
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                       text: 'Sign Up!',
                       style: TextStyle(
                         color: Colors.white,
-                        fontFamily: 'OpenSans',
+                        fontFamily: 'Robotto',
                         fontSize: 12.0,
                         fontWeight: FontWeight.bold
                       )
@@ -172,7 +172,7 @@ class _LoginPageState extends State<LoginPage> {
                   letterSpacing: 1.5,
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
-                  fontFamily: 'OpenSans'
+                  fontFamily: 'Robotto'
                 )
               )
             )
