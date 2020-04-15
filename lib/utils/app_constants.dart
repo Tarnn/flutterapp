@@ -29,3 +29,9 @@ final kBoxDecorationStyle = BoxDecoration(
     ),
   ],
 );
+
+final kUnderBoxShadowDecorationStyle = BoxShadow(
+  color: Colors.black12,
+  blurRadius: 7.0,
+  offset: Offset(0, 5),
+);
