@@ -12,7 +12,11 @@ class MyApp extends StatelessWidget {
       title: Constants.applicationName,
       theme: ThemeData(
         primarySwatch: Colors.green,
+        primaryColor: Color(Constants.primaryColor),
+        accentColor: Color(Constants.shamRock),
+        fontFamily: 'OpenSans'
       ),
+      initialRoute: '/login',
       onGenerateRoute: generateRoutes,
       debugShowCheckedModeBanner: false,
     );
