@@ -188,6 +188,17 @@ class _LoginPageState extends State<LoginPage> {
                 });
               },
             )),
+            GestureDetector(
+              onTap: () => print("Remember Me Clicked..."),
+              child: Text(
+                'Remember Me?',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'OpenSans'
+                ),
+              ),
+            ),
       ],
     ));
   }
