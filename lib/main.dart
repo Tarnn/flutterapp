@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'utils/app_constants.dart' as Constants;
-import 'package:flutterapp/login/login.dart';
+import 'package:Tranquilo/login/login.dart';
 
 void main() => runApp(MyApp());
 

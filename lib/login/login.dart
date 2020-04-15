@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutterapp/utils/app_constants.dart' as Constants;
+import 'package:Tranquilo/utils/app_constants.dart' as Constants;
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);
@@ -44,13 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Container(
-                          height: 50.0,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(image: AssetImage('assets/images/png/Tranquilo.png'))
-                          ),
-                        ),
+                        _buildTranquiloHeader(),
                         SizedBox(height: 30.0),
                         _buildEmailTF(),
                         SizedBox(height: 30.0),
@@ -67,6 +61,16 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     ));
+  }
+
+  Container _buildTranquiloHeader() {
+    return Container(
+      height: 50.0,
+      width: double.infinity,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/png/Tranquilo.png'))),
+    );
   }
 
   GestureDetector _buildSignUp() {
