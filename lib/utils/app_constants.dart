@@ -35,3 +35,6 @@ final kUnderBoxShadowDecorationStyle = BoxShadow(
   blurRadius: 7.0,
   offset: Offset(0, 5),
 );
+
+// ENDPOINTS
+final String LOGIN_ENDPOINT = 'http://localhost:8199/auth';

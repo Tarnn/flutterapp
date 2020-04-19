@@ -1,6 +1,8 @@
+import 'package:Tranquilo/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:Tranquilo/utils/app_constants.dart' as Constants;
+import 'package:get_it/get_it.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);
@@ -10,6 +12,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  AuthService get _service => GetIt.I<AuthService>();
   bool _rememberMe = false;
 
   @override
@@ -188,17 +191,16 @@ class _LoginPageState extends State<LoginPage> {
                 });
               },
             )),
-            GestureDetector(
-              onTap: () => print("Remember Me Clicked..."),
-              child: Text(
-                'Remember Me?',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: 'OpenSans'
-                ),
-              ),
-            ),
+        GestureDetector(
+          onTap: () => print("Remember Me Clicked..."),
+          child: Text(
+            'Remember Me?',
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'OpenSans'),
+          ),
+        ),
       ],
     ));
   }
