@@ -1,6 +1,6 @@
-# flutterapp
+# FlutterApp
 
-A new Flutter project.
+A new Flutter project. Just to learn and figure out what flutter is all about. The objective is to release something cannabis related to the app store. Something similar to weedmaps, without so much info and clutter.
 
 ## Getting Started
 
