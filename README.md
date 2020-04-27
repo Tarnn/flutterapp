@@ -5,3 +5,9 @@ A new Flutter project. Just to learn and figure out what flutter is all about. T
 ## Getting Started
 
 initiate command `flutter run` with an emulator selected, if no emulator is present genymotion offers a free membership.
+
+https://www.genymotion.com/
+
+- OR -
+
+attach your own personal test device with developer debugging enabled, you may configure your device as the host.
