@@ -23,8 +23,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         body: Container(
             color: Color(Constants.shamRock),
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
+            height: double.infinity,
+            width: double.infinity,
             child: _showPage),
         bottomNavigationBar: CurvedNavigationBar(
             color: Colors.white,
@@ -37,16 +37,16 @@ class _MyHomePageState extends State<MyHomePage> {
               Icon(Icons.shopping_cart, size: 35, color: Colors.green),
             ],
             onTap: (index) {
-             setState(() {
-              _showPage = _pageChooser(index);
-            });
+              setState(() {
+                _showPage = _pageChooser(index);
+              });
             },
             animationDuration: Duration(milliseconds: 200),
             animationCurve: Curves.bounceInOut,
             index: 1));
   }
 
-    Widget _pageChooser(final int index) {
+  Widget _pageChooser(final int index) {
     switch (index) {
       case 0:
         return _profilePage;
@@ -62,10 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         break;
     }
   }
-
 }
-
-
 
 class Cart extends StatelessWidget {
   const Cart({
@@ -103,14 +100,46 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(
-          'Will be a Profile ListView',
-          style: TextStyle(
-              fontSize: 30, color: Colors.white, fontFamily: 'OpenSans'),
+        Flexible(
+child:  Container(
+            width: double.infinity,
+            color: Colors.blue,
+            child: ClipPath(
+                clipper: BuildProfileClipPath(),
+                child: Container(
+                  height: 250,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topRight,
+                          end: Alignment.bottomLeft,
+                          colors: [Colors.red, Colors.yellow]
+                          )
+                          ),
+                )),
+          ),
         )
       ],
     );
+  }
+}
+
+class BuildProfileClipPath extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0, size.height - 80);
+    path.quadraticBezierTo(
+        size.width / 2, size.height, size.width, size.height - 80);
+    path.lineTo(size.width, 0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    // TODO: implement shouldReclip
+    return false;
   }
 }
